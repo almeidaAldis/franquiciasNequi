@@ -1,0 +1,17 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: postgres-container
+    environment:
+      POSTGRES_USER: useraldis
+      POSTGRES_PASSWORD: passAldis
+      POSTGRES_DB: proyect
+    ports:
+      - "5432:5432"  # Exponer el puerto 5432 para acceso externo
+    volumes:
+      - /data:/var/lib/postgresql/data  # Persistencia de los datos
+    networks:
+      - postgres-net
+networks:
+  postgres-net:
+    driver: bridge
