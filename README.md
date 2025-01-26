@@ -1,6 +1,6 @@
 # Spring Boot + PostgreSQL + Docker
 
-Este proyecto es una aplicación básica de Spring Boot para gestionar franquicias, sucursales y productos. Incluye APIs documentadas con Swagger, configuración de PostgreSQL en Docker, y soporte para pruebas unitarias con Mockito.
+Este proyecto es una aplicación básica de Spring Boot para gestionar franquicias, sucursales y productos.
 
 ## Requisitos previos
 
