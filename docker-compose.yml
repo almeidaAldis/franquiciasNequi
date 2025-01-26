@@ -12,6 +12,20 @@ services:
       - /data:/var/lib/postgresql/data  # Persistencia de los datos
     networks:
       - postgres-net
+
+  springboot-app:
+    image: springboot-app:latest
+    container_name: springboot-container
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8082"
+    depends_on:
+      - postgres
+    networks:
+      - postgres-net
+          
 networks:
   postgres-net:
     driver: bridge

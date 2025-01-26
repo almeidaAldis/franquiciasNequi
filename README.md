@@ -14,61 +14,40 @@ Este proyecto es una aplicación básica de Spring Boot para gestionar franquici
 1. **Clona el repositorio**
 
    ```bash
-   git clone <URL_DEL_REPOSITORIO>
+   git clone git@github.com:almeidaAldis/franquiciasNequi.git
    cd springboot-postgresql-docker
    ```
 
-2. **Configura Docker**
-
-   Asegúrate de que Docker esté ejecutándose. Luego, inicia los servicios:
-
-   ```bash
-   docker-compose up
-   ```
-
-   Esto levantará una instancia de PostgreSQL en `localhost:5432` con:
-   - Usuario: `postgres`
-   - Contraseña: `postgres`
-   - Base de datos: `demo_db`
-
-3. **Construye el proyecto**
+2. **Construye el proyecto**
 
    Usa Maven para compilar el proyecto y generar el archivo JAR:
 
    ```bash
    mvn clean package
    ```
+   
+3. **Configura Docker**
 
-4. **Ejecuta la aplicación**
-
-   Inicia la aplicación con:
+   Asegúrate de que Docker esté ejecutándose. Luego, inicia los servicios:
 
    ```bash
-   java -jar target/springboot-postgresql-docker-0.0.1-SNAPSHOT.jar
+   docker-compose build
+   docker-compose up 
    ```
 
-5. **Accede al Swagger**
+   Esto levantará una instancia de la aplicacion JAVA en el puerto `localhost:8082` y PostgreSQL en `localhost:5432` con:
+   - Usuario: `postgres`
+   - Contraseña: `postgres`
+   - Base de datos: `demo_db`
 
-   La documentación del API estará disponible en:  
-   [http://localhost:8080/swagger-ui/](http://localhost:8080/swagger-ui/)
 
-## Pruebas Unitarias
+4. **Pruebas**
 
-Este proyecto incluye dependencias para realizar pruebas unitarias con **Mockito**. Para ejecutar las pruebas, usa:
-
-```bash
-mvn test
-```
-
-## Estructura del proyecto
-
-- `controller`: Contiene los controladores para los endpoints.
-- `model`: Define las entidades (Franchise, Branch, Product).
-- `repository`: Interfaces para interactuar con la base de datos.
-- `service`: Contiene la lógica de negocio.
+   Pueden realizar las pruebas con la siguiente colección de postman:
+   https://grey-spaceship-424235.postman.co/workspace/Team-Workspace~68edb600-ee5d-4c38-8b36-a536e03fe47c/collection/7360325-5230f1fc-2df4-41fa-aca7-dfa4d9073cb0?action=share&creator=7360325&active-environment=7360325-554d1cfe-4b8d-4391-a4de-9a3a3e1f19df 
 
 ## Notas adicionales
 
 - Puedes modificar las credenciales de la base de datos en `src/main/resources/application.properties` si es necesario.
-- Asegúrate de usar la versión correcta de Java (23) y Spring Boot (3.4.2).
+- Usar la versión correcta de Java (23) y Spring Boot (3.4.2).
 - Si necesitas ayuda adicional, no dudes en contactar.
